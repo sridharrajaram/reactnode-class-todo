@@ -40,7 +40,7 @@ function Login() {
         onSubmit: async (values) => {
             console.log(values);
             try {
-                let users = await axios.post(`${env.api}/register`,values,{headers:{"Access-Control-Allow-Origin": "*"}});
+                let users = await axios.post(`${env.api}/register`,values,{headers:{"Access-Control-Allow-Origin": "true"}});
                 console.log(users.data.message);
             } catch (error) {
                 console.log(error);
