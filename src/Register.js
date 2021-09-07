@@ -41,7 +41,7 @@ function Login() {
             console.log(values);
             try {
                 
-                let users = await axios.post(`${env.api}/register`,values,{headers:{"Access-Control-Allow-Origin": "NO"}});
+                let users = await axios.post(`${env.api}/register`,values,{headers:{origin:"*"}});
                 console.log(users.data.message);
             } catch (error) {
                 console.log(error);
