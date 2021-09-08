@@ -9,6 +9,8 @@ import { useHistory } from 'react-router-dom';
 
 function Login() {
 
+   const history = useHistory();
+
    const formik = useFormik({
       initialValues: {
          emailAddress: "",
@@ -30,6 +32,7 @@ function Login() {
             let userlogin = await axios.post(`${env.api}/login`, values);
             alert(userlogin.data.message);
             window.localStorage.setItem("app_token",userlogin.data.token)
+            history.push("/todo-list");
          } catch (error) {
             console.log(error);
          }
