@@ -80,6 +80,7 @@ function Task() {
                     <div className="col-lg-4">
                         <h3>Welcome User</h3>
                     </div>
+                    <div className="col-lg-2"><h1> Todo list </h1></div>
                     <div dir="rtl" className="col-lg-6">
                         <button className="btn btn-primary"
                             onClick={(e)=>{
@@ -87,7 +88,7 @@ function Task() {
                             }}
                         >logout</button>
                     </div>
-                    <div className="col-lg-2"><h1> Todo list </h1></div>
+                    
                     
                 </div>
                 <div className="row mt-2">
