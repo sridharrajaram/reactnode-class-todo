@@ -1,14 +1,15 @@
 import Tasklist from './Tasklist';
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useEffect, useState} from 'react';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import env from './UrlSettings';
 
 function Task() {
 
     const [todo, setToDo] = useState([]);
     const [task, setTask] = useState("");
+    const history = useHistory();
 
     const fecthData = async () => {
         try {
@@ -83,8 +84,9 @@ function Task() {
                     <div className="col-lg-2"><h1> Todo list </h1></div>
                     <div dir="rtl" className="col-lg-6">
                         <button className="btn btn-primary"
-                            onClick={(e)=>{
-                                console.log(e);
+                            onClick={()=>{
+                                window.localStorage.removeItem("app_token")
+                                history.push("/login")
                             }}
                         >logout</button>
                     </div>
